@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Potfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+<style>
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  height: auto;
+  font-family: "Source Sans Pro";
+  line-height: 1.5;
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+.header-container {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0;
+  padding: 10px 50px;
+
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+
+.nav-item {
+  padding: 22px 30px;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #333;
+  text-transform: uppercase;
+  transition: 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.nav-list li:hover,
+.nav-item:hover a {
+  color: #facf0f;
+  transition: 0.3s ease 0s;
+}
+/* .nav-list :hover > a {
+  color: #facf0f;
+  transition: 0.3s ease 0s;
+} */
+
+.header-logo-sub {
+  font-size: 1.8rem;
+}
+
+.nav-item:first-child {
+  margin-right: auto;
+  padding: 0;
+}
+
+.nav-item:last-child {
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease 0s color;
+  cursor: pointer;
+}
+
+/* .header-logo-container:hover > .header-logo-sub {
+  columns: #facf0f;
+} */
+
+.logo-container {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50px;
+  background-color: #facf0f;
+  margin-right: 1.5rem;
+  overflow: hidden;
+}
+
+.header-logo-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --------------------------- */
+.hero-section {
+  height: 82rem;
+  position: relative;
+}
+
+.hero-content {
+  margin: auto;
+  max-width: 92%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-primary-text {
+  width: 100%;
+  font-size: 60px;
+  padding-left: 2rem;
+  padding-left: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* line-height: 2; */
+  font-weight: 700;
+  color: #111;
+}
+
+.hero-description {
+  margin: 3rem 3rem 5rem 3rem;
+}
+
+.description-text {
+  font-size: 22px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.btn {
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  background-color: #facf0f;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 15px 15px rgb(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.btn-primary {
+  padding: 2rem 7rem;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+
+.btn:hover {
+  /* transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]; */
+
+  transform: translateY(-3px);
+  transition: transform 0.3s ease-in 0s, transform 0.3s ease 0s;
+}
+
+.scroll-animation {
+  width: 25px;
+  height: 45px;
+  border: 2px solid #333;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  border-radius: 15px;
+}
+
+.social-icon-container {
+  width: 60px;
+  height: 260px;
+  background-color: #fff;
+  /* border: 1px solid blue; */
+  position: absolute;
+  left: 0;
+  top: 30%;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.social-icon {
+  height: 50px;
+  width: 50px;
+  fill: #000;
+  color: #fff;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.4s ease 0s;
+  cursor: pointer;
+}
+
+.social-icon:first-child {
+  margin-top: 5px;
+}
+
+.social-icon:last-child {
+  margin-bottom: 5px;
+}
+
+.social-icon:hover {
+  background-color: #fff3bf;
+  transition: 0.4s ease 0s;
+}
+
+.about-section {
+  height: 140%;
+}
+
+.about-outer-container {
+  min-width: 80%;
+  margin: 10rem 15rem;
+  text-align: center;
+}
+
+.about-header {
+  font-size: 3.75rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+hr {
+  /* border: none;
+  border-top: 5px solid #facf0f;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 20px;
+  width: 2rem;
+  margin: auto; */
+
+  /* border: none; */
+  border: 2px solid #facf0f;
+  background-color: #facf0f;
+   height: 1px; 
+  width: 3rem;
+  height: 3px;
+  margin: auto;
+  border-radius: 20px;
+  margin: 1.5rem auto;
+}
+
+.about-description {
+  width: 70%;
+
+  margin: auto;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.equal-split-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10rem;
+  text-align: start;
+  margin-top: 10rem;
+}
+
+.get-to-know {
+  font-size: 2.7rem;
+  /* letter-spacing: 0.5px; */
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.my-skills {
+  font-size: 2.8rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.get-to-know-desc {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #5c5c5c;
+  margin-bottom: 1rem;
+}
+
+.get-to-know-desc:last-child {
+  margin-bottom: 0rem;
+}
+
+.get-to-know-desc a:link,
+.get-to-know-desc a:visited {
+  text-decoration: underline;
+  color: #facf0f;
+}
+
+.btn-secondary {
+  padding: 1.5rem 5rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  margin-top: 3rem;
+}
+
+.skill {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  /* letter-spacing: 1.1px; */
+  padding: 1.3rem 2.2rem;
+  border: none;
+  border-radius: 5px;
+  margin: 0rem 1.2rem 1.5rem 0rem;
+  color: #5c5c5c;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contact-section {
+  height: 120%;
+}
+
+.outer-contact-section {
+  width: 79%;
+  margin: auto;
+}
+
+.contact-header {
+  font-size: 3.75rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.contact-sub-header {
+  width: 65%;
+  margin: auto;
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.form-container {
+  width: 65%;
+  height: auto;
+  margin: auto;
+}
+
+.outer-form-container {
+  width: 90%;
+  /* height: auto; */
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.3);
+}
+
+form > div {
+  margin-bottom: 3rem;
+}
+
+form > div:nth-child(3) {
+  margin-bottom: 0rem;
+}
+
+form > div:last-child {
+  position: relative;
+  padding: 4rem;
+}
+
+label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: rgb(92, 92, 92);
+  width: 100%;
+  letter-spacing: 1.1px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+input {
+  width: 100%;
+  margin: auto;
+  text-align: start;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 3px;
+}
+
+textarea {
+  border-radius: 5px;
+  width: 99%;
+  height: 20rem;
+  width: 100%;
+  resize: none;
+  background-color: #f0f0f0;
+  margin-bottom: 0rem;
+  border: none;
+}
+
+.btn-submit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.footer {
+  height: 29rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.footer-flex {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 0rem;
+}
+
+.left-side {
+  width: 45%;
+}
+
+.left-side > h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.left-side > p {
+  font-size: 15px;
+}
+
+.right-side > h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.right-side a > img {
+  height: 20px;
+  /* width: 0px; */
+  margin: 0.3rem 0.5rem;
+}
+
+footer {
+  margin-top: 5rem;
+}
+
+.actual-footer > p {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: 4rem;
+  font-size: 12px;
+  border: none;
+  border-top: 1px solid #5c5c5c;
+  color: #f0f0f0;
+}
+
+
+
+
+</style>
+
+
+  <body>
+    <div class="header">
+      <div class="header-container">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <div class="header-logo-container">
+              <div class="logo-container">
+                <img
+                  src="https://www.apkonline.net/imagescropped/arpanicon128.jpgplus.webp"
+                  alt="logo"
+                  class="header-logo-main"
+                />
+              </div>
+              <span class="header-logo-sub"> ARPAN ADHIKARI</span>
+            </div>
+          </li>
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="">About</a></li>
+          <li class="nav-item"><a href="https://github.com/DaemonArpan">Projects</a></li>
+          <li class="nav-item"><a href="https://www.viber.com/en/?utm_source=invite&utm_Medium=share&utm_campaign=msgtest">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-primary-text">Hey, I'm Arpan Adhikari</h1>
+          <div class="hero-description">
+            <p class="description-text">
+              Hello, I'm Arpan Adhikari, a computer engineering student. I have a diverse skill set that includes expertise in HTML, CSS, C, and Java programming languages. With these skills, I can design visually appealing websites, develop efficient software and applications.
+            </p>
+          </div>
+          <a href="#"><button class="btn btn-primary">Projects</button></a>
+        </div>
+
+        <div class="scroll-animation"></div>
+
+        <div class="social-icon-container">
+          <div class="social-icon">
+            <a href="https://www.linkedin.com/in/arpan-adhikari-043609255/"
+              ><img src="logo-linkedin.svg" alt="connect in Linkedin"
+            /></a>
+          </div>
+          <div class="social-icon">
+            <a href="https://twitter.com/Arpan_Adhi"> 
+            <img src="logo-twitter (2).svg" alt="follow in Twitter" />
+            <a href=""></a>
+          </div>
+          
+          <div class="social-icon">
+            <a href="https://github.com/DaemonArpan" target="_blank"
+              ><img src="logo-github (1).svg" alt="View my GitHub"
+            /></a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <div class="about-section">
+      <div class="about-outer-container">
+        <h2 class="about-header">About Me</h2>
+        <hr />
+        <div class="about-description">
+          Here you will find more information about me, what I do, and my
+          current skills mostly in terms of programming and technology
+        </div>
+
+        <div class="equal-split-section">
+          <span class="left-part">
+            <h3 class="get-to-know">Get to know me!</h3>
+            <p class="get-to-know-desc">
+              I'm currently  <strong> student</strong> building the
+              Front-end of Websites and Web Applications that leads to the
+              success of the overall product. Check out some of my work in the
+              <strong>Projects</strong> section.
+            </p>
+
+            <p class="get-to-know-desc">
+              I also like sharing content related to the stuff that I have
+              learned till now in terms of <strong>Development</strong> so it can
+              help other people of the Dev Community. Feel free to Connect or
+              Follow me on my <strong><a href="">Linkedin</a></strong> where I
+              post useful content related to Web Development and Programming.
+            </p>
+            <p class="get-to-know-desc">
+              I'm open to <strong>any tech related </strong> opportunities where I can
+              contribute, learn and grow. If you have a good opportunity that
+              matches my skills and experience then don't hesitate to
+              <strong>contact</strong> me.
+            </p>
+
+            <button class="btn btn-secondary">Contact</button>
+          </span>
+          <span class="right-part">
+            <h3 class="my-skills">My Skills</h3>
+            <div class="skill-btns">
+              <button class="skill skill1">HTML</button>
+              <button class="skill skill2">CSS</button>
+              <button class="skill skill2">JavaScript</button>
+             
+              <button class="skill skill6">GIT</button>
+              <button class="skill skill7">GitHub</button>
+              <button class="skill skill8">Responsive Design</button>
+              <button class="skill skill9">SEO</button>
+              
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <div class="outer-contact-section">
+        <div class="contact-header">Contact</div>
+        <hr />
+        <p class="contact-sub-header">
+          Feel free to Contact me by submitting the form below and I will get
+          back to you as soon as possible
+        </p>
+
+        <div class="form-container">
+          <div class="outer-form-container">
+            <form action="">
+              <div>
+                <label for="fullName" class="fullName">Name</label><br />
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Enter Your Name"
+                /><br />
+              </div>
+
+              <div>
+                <label for="email" class="email">Email</label><br />
+                <input type="email" id="email" placeholder="Enter Your Email" />
+              </div>
+
+              <div>
+                <label for="message" class="message">Message</label><br />
+                <textarea
+                  type="message"
+                  id="message"
+                  placeholder="Enter Your Message"
+                  rows="10"
+                  cols="100"
+                >
+                </textarea>
+              </div>
+              <div>
+                <a href="#"
+                  ><button class="btn btn-secondary btn-submit">
+                    Submit
+                  </button></a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-flex">
+        <div class="left-side">
+          <h4>Arpan Adhikari</h4>
+          <p>
+            A focused Student/Web Developer building the Frontend of Websites
+            and Web Applications that leads to the success of the overall
+            product
+          </p>
+        </div>
+
+        <div class="right-side">
+          <h4>Social</h4>
+          <a href=""
+            ><img
+              src="icons8-linkedin-2-50.png"
+              alt="my-linkedin"
+          /></a>
+
+          <a href=""
+            ><img src="icons8-twitter-50.png" alt=""
+          /></a>
+
+         
+            <a href=""
+              ><img
+                src="icons8-github-50.png"
+                alt="" /></a
+          ></a>
+          
+        </div>
+      </div>
+      <div class="actual-footer">
+        <p>© Copyright 2023. Made by Arpan AKA Daemon </p>
+      </div>
+    </div>
+  </body>
+</html>
